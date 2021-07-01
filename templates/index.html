@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assignment 5</title>
+</head>
+<body>
+<div style="text-align: center">
+    <h1>krishna Teja Chintala Cheruvu</h1>
+    <h3>1001861564</h3>
+</div>
+<div>
+    <form action="{{url_for('search_word')}}" enctype=multipart/form-data method="POST" style="width:30%;">
+        <label for="words">Enter a word to search the books</label>
+        <input type="text" id="words" name="words">
+        <a href="/searchword"><input type="submit" value="Find"></a>
+    </form>
+</div>
+</body>
+</html>
