@@ -11,10 +11,37 @@
     <h3>Quiz-5</h3>
 </div>
 <div>
-    <form action="{{url_for('search_word')}}" enctype=multipart/form-data method="POST" style="width:30%;">
+    <form action="{{url_for('index')}}" enctype=multipart/form-data method="POST" style="width:30%;">
         <label for="words">Enter a word to search the books</label>
         <input type="text" id="words" name="words">
-        <a href="/searchword"><input type="submit" value="Find"></a>
+        <label for="filename">Enter the filename to save </label>
+        <input type="text" id="filename" name="filename">
+        <a href="/"><input type="submit" value="Find"></a>
+
+        <p>
+            Name of the textfile is
+        </p><br>
+        <p>
+            {{ textfile }}
+        </p><br><br>
+        <p>
+            Number of words in a textfile is
+        </p><br>
+        <p>
+            {{ number }}
+        </p>
+    </form>
+
+    <form action="{{url_for('search_occurances')}}" enctype=multipart/form-data method="POST" style="width:30%;">
+        <label for="word">Enter a word to find the occurances</label>
+        <input type="text" id="word" name="word">
+        <a href="/searchoccurances"><input type="submit" value="Find"></a>
+        <p>
+            Number of occurance of the entered word is
+        </p><br>
+        <p>
+            {{ occu }}
+        </p>
     </form>
 </div>
 </body>
