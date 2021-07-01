@@ -3,7 +3,7 @@ import os
 import string
 
 
-app = Flask(__name__)
+application = Flask(__name__)
 
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -11,7 +11,7 @@ word_file = os.path.join(basedir, 'static/doc1.txt')
 
 
 
-@app.route('/', methods=['GET', 'POST'])
+@application.route('/', methods=['GET', 'POST'])
 def index():
     word1 = []
     text_file = ""
@@ -41,7 +41,7 @@ def index():
     return render_template('index.html', textfile = text_file, number = number_of_words)
 
 
-@app.route('/searchoccurances', methods = ['GET', 'POST'])
+@application.route('/searchoccurances', methods = ['GET', 'POST'])
 def search_occurances():
     wordss = []
     if request.method == 'POST':
@@ -59,7 +59,7 @@ def search_occurances():
     return render_template('index.html', occu = total_length)
 
 
-@app.route('/searchall', methods=['GET', 'POST'])
+@application.route('/searchall', methods=['GET', 'POST'])
 def search_all():
     wordsss1 = []
     wordsss2 = []
@@ -182,5 +182,5 @@ def search_all():
     return render_template('index.html', len1 = word_len1, len2 = word_len2, len3 = word_len3, len4 = word_len4, len5 = word_len5, len6 = word_len6, len7 = word_len7, len8 = word_len8, files1 = filename1, files2 = filename2, files3 = filename3, files4 = filename4, files5 = filename5, files6 = filename6, files7 = filename7, files8 = filename8)
 
 
-if __name__ == '_main_':
-    app.run()
+if __name__ == '__main__':
+    application.run()
